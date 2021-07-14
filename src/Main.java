@@ -1,18 +1,33 @@
-import static ui.UIMenu.*;
+import model.Doctor;
+import model.Patient;
+
+import java.util.Date;
 
 public class Main {
     public static void main(String[] args) {
 
         //showMenu();
-     Doctor myDoctor = new Doctor ("Alvaro Florencia","pediatria" );
-        System.out.println(myDoctor.name);
-        System.out.println(myDoctor.speciality);
-        Patient patient = new Patient("alvaro","al@gmail.com");
-        patient.setWeight(54.6);
+     Doctor myDoctor = new Doctor ("Alvaro Florencia","alvaro@gmail.com" );
+        myDoctor.addAvailableAppointment(new Date(), "4pm");
+        myDoctor.addAvailableAppointment(new Date(), "10am");
+        myDoctor.addAvailableAppointment(new Date(), "1pm");
+
+        System.out.println(myDoctor);
+        System.out.println();
+        System.out.println();
+        Patient patient = new Patient("Angel", "angel@mail.com");
+        System.out.println(patient);
 
 
 
         /*
+         for (model.Doctor.AvailableAppointment aA: myDoctor.getAvailableAppointments()) {
+            System.out.println(aA.getDate() + " " + aA.getTime());
+        }
+        System.out.println(myDoctor.name);
+        System.out.println(myDoctor.speciality);
+        model.Patient patient = new model.Patient("alvaro","al@gmail.com");
+        patient.setWeight(54.6);
 
          System.out.println(patient.name);
        System.out.println(patient.email);
@@ -29,8 +44,8 @@ public class Main {
 
         System.out.println();
         System.out.println();
-        Patient patient = new Patient("Lulu", "alejandra@mail.com");
-        Patient patient2 = new Patient("Ana", "anahi@mail.com");
+        model.Patient patient = new model.Patient("Lulu", "alejandra@mail.com");
+        model.Patient patient2 = new model.Patient("Ana", "anahi@mail.com");
 
         System.out.println(patient.getName());
         System.out.println(patient2.getName());
